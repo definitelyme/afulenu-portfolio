@@ -1,0 +1,60 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dev-debug",
+      "request": "launch",
+      "program": "lib/main_dev.dart",
+      "type": "dart",
+      "flutterMode": "debug",
+      "args": [
+        "--flavor",
+        "dev"
+      ],
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "showMemoryUsage": true
+    },
+    {
+      "name": "prod-debug",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "flutterMode": "debug",
+      "args": [
+        "--flavor",
+        "prod"
+      ],
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "showMemoryUsage": true
+    },
+    {
+      "name": "prod-profile",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "flutterMode": "profile",
+      "args": [
+        "--flavor",
+        "prod"
+      ],
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "showMemoryUsage": true
+    },
+    {
+      "name": "prod-release",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "flutterMode": "release",
+      "args": [
+        "--flavor",
+        "prod"
+      ],
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "showMemoryUsage": true
+    }
+  ]
+}

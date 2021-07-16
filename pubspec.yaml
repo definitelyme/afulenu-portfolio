@@ -6,7 +6,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.13.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -48,6 +48,11 @@ dependencies:
   flutter_bloc: ^7.0.0
   # Automatically persists and restores bloc states
   hydrated_bloc: ^7.0.0
+  # A state-management library that:
+  # - catches programming errors at compile time rather than at runtime
+  # - removes nesting for listening/combining objects
+  # - ensures that the code is testable
+  flutter_riverpod: ^0.14.0+3
   # A lightweight and blazing fast key-value database written in pure Dart.
   hive: ^2.0.4
   hive_flutter: ^1.0.0
@@ -60,12 +65,22 @@ dependencies:
   built_collection: ^5.0.0
   # Functional Programming
   dartz: ^0.10.0-nullsafety.2
+  # Defines the annotation used by copy_with_extension_gen to generate copyWith extensions.
+  copy_with_extension: ^2.0.2
   # For regular Unions
   freezed_annotation: ^0.14.2
   # For generating unique UUIDs
   uuid: ^3.0.4
   # Flutter widget that automatically resizes text to fit perfectly within its bounds
-  auto_size_text: ^3.0.0-nullsafety.0
+  auto_size_text:
+    git:
+      url: git://github.com/f0rx/auto_size_text.git
+      ref: ft/selectable-text
+  # A flutter package which contains a collection of some cool and awesome text animations.
+  animated_text_kit: ^4.2.1
+  # A flutter plugin for adapting screen and font size.Let your UI
+  # display a reasonable layout on different screen sizes!
+  flutter_screenutil: ^5.0.0+2
   # simplifies dependency injection
   injectable: ^1.4.0
   # provides internationalization
@@ -81,6 +96,8 @@ dependencies:
   shimmer: ^2.0.0
   # A port of Kotlin's Kotlin Standard library for Dart/Flutter projects.
   kt_dart: ^0.9.0
+  # Widgets in this package: --- AlignPositioned, AnimatedAlignPositioned, AnimChain
+  align_positioned: ^2.0.2
   # A port of the Rails/ActiveSupport inflector library to Dart.
   inflection3: ^0.5.3+2
   # Defines the annotations used by json_serializable
@@ -93,6 +110,10 @@ dependencies:
   cached_network_image: ^3.1.0-alpha.1
   # This Flutter package provides a Avatar Glow Widget with cool background glowing animation.
   avatar_glow: ^2.0.1
+  # Universal Platform - A Web-safe Platform class
+  universal_platform: ^1.0.0+1
+  # A cross-platform dart:html:
+  universal_html: ^2.0.8
 
 dependency_overrides:
   build: ">=2.0.0 <2.1.0"
@@ -106,6 +127,7 @@ dev_dependencies:
   pedantic: ^1.11.0
   # Code Generators
   build_runner: ^2.0.1
+  copy_with_extension_gen: ^2.0.2
   freezed: ^0.14.2
   hive_generator: ^1.1.0
   injectable_generator: ^1.4.0
@@ -117,7 +139,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/svgs/
+
+  fonts:
+    - family: AppIcons
+      fonts:
+        - asset: assets/fonts/AppIcons.ttf

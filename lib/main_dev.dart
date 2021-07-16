@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -13,14 +11,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Setup Environmental variables & Service provider
-  await BuildEnvironment.init(flavor: BuildFlavor.prod);
+  await BuildEnvironment.init(flavor: BuildFlavor.dev);
 
-  // Add Google Fonts Licensing
-  LicenseRegistry.addLicense(() async* {
-    final license =
-        await rootBundle.loadString('assets/fonts/google_fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
-  });
+  // // Add Google Fonts Licensing
+  // LicenseRegistry.addLicense(() async* {
+  //   final license =
+  //       await rootBundle.loadString('assets/fonts/google_fonts/OFL.txt');
+  //   yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  // });
 
   try {
     // Initializes Hive with a valid directory in your app files.
